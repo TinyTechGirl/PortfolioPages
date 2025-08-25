@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisy Chen - Data Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #764ba2;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #495057;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 5px 0;
+            color: #6c757d;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-list li::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 0.8rem;
+        }
+
+        .project {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #764ba2;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .project h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .project-tech {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .project p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        .experience-item {
+            border-left: 3px solid #667eea;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            position: absolute;
+            left: -7.5px;
+            top: 0;
+        }
+
+        .job-title {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #764ba2;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header, .section {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="profile-img">DC</div>
+            <h1>Daisy Chen</h1>
+            <div class="subtitle">Data Analyst | Insights & Analytics Specialist</div>
+            <p>Transforming data into actionable business insights through statistical analysis, visualization, and strategic recommendations.</p>
+            <div class="contact-info">
+                <a href="mailto:daisy.chen@email.com">📧 daisy.chen@email.com</a>
+                <a href="https://linkedin.com/in/daisychen">💼 LinkedIn</a>
+                <a href="https://github.com/daisychen">💻 GitHub</a>
+                <span>📍 Bristol, UK</span>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Passionate data analyst with 3+ years of experience turning complex datasets into clear, actionable insights. I specialize in statistical analysis, data visualization, and building automated reporting systems that drive business decisions. My background spans retail analytics, customer behavior analysis, and market research.</p>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills">
+                <div class="skill-category">
+                    <h3>Programming & Analysis</h3>
+                    <ul class="skill-list">
+                        <li>Python (Pandas, NumPy, SciPy)</li>
+                        <li>R (ggplot2, dplyr, tidyr)</li>
+                        <li>SQL (PostgreSQL, MySQL)</li>
+                        <li>Statistical Analysis</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Visualization Tools</h3>
+                    <ul class="skill-list">
+                        <li>Tableau</li>
+                        <li>Power BI</li>
+                        <li>Excel (Advanced)</li>
+                        <li>Google Analytics</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data & Cloud</h3>
+                    <ul class="skill-list">
+                        <li>Google Cloud Platform</li>
+                        <li>BigQuery</li>
+                        <li>Apache Spark</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <h2>Featured Projects</h2>
+            
+            <div class="project">
+                <h3>Customer Segmentation Analysis</h3>
+                <div class="project-tech">Python • K-Means Clustering • Tableau</div>
+                <p>Developed a customer segmentation model using K-means clustering on 50K+ customer records, identifying 5 distinct customer personas. Created interactive Tableau dashboard resulting in 15% increase in targeted marketing campaign effectiveness.</p>
+            </div>
+
+            <div class="project">
+                <h3>Sales Forecasting Dashboard</h3>
+                <div class="project-tech">R • Time Series Analysis • Power BI</div>
+                <p>Built predictive sales forecasting model using ARIMA and seasonal decomposition techniques. Automated monthly reporting pipeline that improved forecast accuracy by 23% and reduced manual reporting time by 8 hours weekly.</p>
+            </div>
+
+            <div class="project">
+                <h3>A/B Testing Framework</h3>
+                <div class="project-tech">Python • Statistical Testing • SQL</div>
+                <p>Designed and implemented A/B testing framework for e-commerce platform, including power analysis, sample size calculations, and automated statistical significance testing. Enabled data-driven decision making for 12+ product experiments.</p>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">Senior Data Analyst</div>
+                <div class="company">TechCorp Solutions</div>
+                <div class="duration">January 2022 - Present</div>
+                <p>Lead analyst for customer analytics team, managing multiple stakeholders and delivering insights that drive strategic business decisions. Reduced customer churn by 18% through predictive modeling and implemented automated reporting systems saving 20+ hours monthly.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Data Analyst</div>
+                <div class="company">RetailPlus Ltd</div>
+                <div class="duration">June 2021 - December 2021</div>
+                <p>Analyzed sales and inventory data to optimize product placement and pricing strategies. Created comprehensive dashboards for management team and conducted market basket analysis that increased cross-selling revenue by 12%.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Junior Data Analyst</div>
+                <div class="company">StartupXYZ</div>
+                <div class="duration">September 2020 - May 2021</div>
+                <p>Supported data collection and analysis efforts for marketing campaigns. Developed Excel-based reporting templates and performed exploratory data analysis on user behavior data, contributing to 25% improvement in user engagement.</p>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2>Education & Certifications</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">MSc Data Science</div>
+                <div class="company">University of Bristol</div>
+                <div class="duration">2019 - 2020</div>
+                <p>Specialized in statistical modeling, machine learning, and data visualization. Dissertation on "Predictive Analytics in Retail Customer Behavior" achieved distinction grade.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Google Data Analytics Professional Certificate</div>
+                <div class="company">Coursera</div>
+                <div class="duration">2020</div>
+                <p>Comprehensive program covering data analysis process, visualization best practices, and hands-on experience with industry-standard tools.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
